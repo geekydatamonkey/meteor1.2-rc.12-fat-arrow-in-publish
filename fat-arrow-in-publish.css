@@ -1,0 +1,62 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  width: 80%;
+  margin: 2em auto;
+}
+
+code {
+    color: #c33;
+    background-color: #fee;
+    font-size: 1.2em;
+    text-transform: none;
+}
+
+#login-buttons {
+  float: right;
+}
+
+.credentials {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-left: 2em;
+  color: #aaa;
+}
+
+.credentials p {
+  margin: 0;
+}
+.credentials code {
+  font-size: 1.5em;
+}
+
+.container {
+  overflow: auto;
+}
+.col {
+  float: left;
+  width: 48%;
+  margin-right: 2%;
+}
+.col:last-child {
+  margin-right: 0;
+}
+
+.item-list {
+  background: #f3f3f3;
+  padding: 1em;
+}
+
+.item-list h3 {
+  margin-top: 0;
+}
+.item-list ul {
+  margin: 0;
+}

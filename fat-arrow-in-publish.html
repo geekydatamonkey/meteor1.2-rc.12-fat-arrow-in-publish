@@ -1,0 +1,58 @@
+<head>
+  <title>Todo List</title>
+</head>
+ 
+<body>
+
+  {{> loginButtons align="right" }}
+
+  <header>
+    <h1>Test of Fat Arrow in Publish</h1>
+  </header>
+
+  <p>You are logged in as:</p>
+  <div class="credentials">
+    <p>Username: <code>test</code></p>
+    <p>Password: <code>test</code></p>
+  </div>
+
+  <p><code>this.userId</code> doesn't seem to work as expected within Meteor.publish() when using fat-arrow binding.</p>
+
+
+  <p>Upon startup, meteor creates a user <code>test</code> and 10 items owned by the user.</p>
+  <p>Publish only shows items owned by the current logged in user.</p>
+
+  <div class="container">
+    <section class="col">
+      <h2>Expected</h2>
+      <p>The user <code>test</code> should see all 10 owned items below once they login.</p>
+
+      <section class="item-list">
+        <h3>List of Items</h3>
+        <ul>
+          {{#each tasksES5}}
+            {{> task}}
+          {{/each}}
+        </ul>
+      </section>
+    </section><!-- .col -->
+
+    <section class="col">
+      <h2>Observed</h2>
+      <p>With <code>() => {...}</code>, no items show up from Meteor.Publish().</p>
+
+      <section class="item-list">
+        <h3>List of Items</h3>
+        <ul>
+          {{#each tasksES2015}}
+            {{> task}}
+          {{/each}}
+        </ul>
+      </section>
+    </section>
+  </div>
+</body>
+
+<template name="task">
+  <li>{{text}}</li>
+</template>
